@@ -1,0 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  #new-player-form{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 75vh;
+    border: 10px solid rgba(0, 116, 236,.9294117647058824);
+    margin: 0 auto;
+    margin-bottom: 2vh;
+}
