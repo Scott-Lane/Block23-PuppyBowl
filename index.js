@@ -8,9 +8,9 @@ const playerTeamId = document.getElementById("teamId");
 const playerCohorId = document.getElementById("cohortId");
 const allPlayers = document.getElementById("all-players-container");
 
-// Add your cohort name to the cohortName variable below, replacing the 'COHORT-NAME' placeholder
+
 const cohortName = '2308-FTB-MT-WEB-PT';
-// Use the APIURL variable for fetch requests
+
 const API_URL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}/players`;
 
 function setImgSrcAndAlt (imgEL, imgSrc, imgAlt){
@@ -115,27 +115,6 @@ const removePlayer = async (playerId) => {
     }
 };
 
-/**
- * It takes an array of player objects, loops through them, and creates a string of HTML for each
- * player, then adds that string to a larger string of HTML that represents all the players. 
- * 
- * Then it takes that larger string of HTML and adds it to the DOM. 
- * 
- * It also adds event listeners to the buttons in each player card. 
- * 
- * The event listeners are for the "See details" and "Remove from roster" buttons. 
- * 
- * The "See details" button calls the `fetchSinglePlayer` function, which makes a fetch request to the
- * API to get the details for a single player. 
- * 
- * The "Remove from roster" button calls the `removePlayer` function, which makes a fetch request to
- * the API to remove a player from the roster. 
- * 
- * The `fetchSinglePlayer` and `removePlayer` functions are defined in the
- * @param playerList - an array of player objects
- * @returns the playerContainerHTML variable.
- */
-
 const renderAllPlayers = async (playerList) => {
     try {
         playerContainer.innerHTML = "";
@@ -176,13 +155,13 @@ const renderAllPlayers = async (playerList) => {
 const renderSinglePlayer = async (player) =>{
     if(!player || player.length === 0)
     {
-        playerContainer.innerHTML = /*html*/
+        playerContainer.innerHTML =
         `
         <h1>There is not a doggo here! 🧐</h1>
         `;
         return
     }
-    let singlePlayerHTML = /*html*/
+    let singlePlayerHTML = 
     `
     <div class="single-player-div">
         <div class="single-player-info">
@@ -210,19 +189,9 @@ const renderSinglePlayer = async (player) =>{
     });
 }
 
-/**
- * It renders a form to the DOM, and when the form is submitted, it adds a new player to the database,
- * fetches all players from the database, and renders them to the DOM.
- */
 
-// const init = async () => {
-//      players = await fetchAllPlayers();
-//     // renderAllPlayers(players);
-
-//     renderNewPlayerForm();
-// }
 const renderNewPlayerForm = () => {
-    try {let fromHTML = /* html */
+    try {let fromHTML = 
     `<form>
     <h1>Add Your favorite pup to the team!</h1>
     <label for="name">Name</label>
@@ -265,8 +234,6 @@ const renderNewPlayerForm = () => {
         playerData.breed.valueOf = '';
         playerData.status.valueOf = '';
         playerData.image.valueOf = '';
-        // playerData.teamId.valueOf = '';
-        // playerData.cohortId.valueOf = '';
     });
         
     } catch (err) {
